@@ -30,7 +30,7 @@ cp env/.env.sample env/.env
 This is used to make it available only to authorized clients.  
 `MANAGER_KEY` is the private key of the account to be accessed remotely.  
 `Web3 Secret Storage` encrypts and stores the manager's private key.  
-Sample `Web3 Secret Storage` are `./keystore/test_manager.key`.
+Sample `Web3 Secret Storage` are `./keystore/test_manager.key`.  
 Please refer to the following  
 [https://github.com/ethereum/wiki/wiki/Web3-Secret-Storage-Definition](https://github.com/ethereum/wiki/wiki/Web3-Secret-Storage-Definition)  
 [https://web3js.readthedocs.io/en/v1.2.11/web3-eth-accounts.html](https://web3js.readthedocs.io/en/v1.2.11/web3-eth-accounts.html)
@@ -40,7 +40,7 @@ Please refer to the following
 In testnet
 
 ```bash
-npm run tart:testnet
+npm run start:testnet
 ```
 
 In mainnet
