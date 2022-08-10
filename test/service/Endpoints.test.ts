@@ -37,7 +37,7 @@ describe("Test of Server", function () {
     const initial_balance = BigNumber.from(10000).mul(BigNumber.from(10).pow(18));
 
     before("Create TestServer", async () => {
-        config.readFromFile(path.resolve(process.cwd(), "config/config_test.yaml"));
+        config.readFromFile(path.resolve(process.cwd(), "config", "config_test.yaml"));
         serverURL = new URL(`http://127.0.0.1:${config.server.port}`);
         wallet_server = new TestWalletServer(config);
     });

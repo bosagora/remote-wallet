@@ -58,7 +58,7 @@ export class Config implements IConfig {
         const args = parser.parse_args();
 
         let configPath = path.resolve(Utils.getInitCWD(), args.config);
-        if (!fs.existsSync(configPath)) configPath = path.resolve(Utils.getInitCWD(), "config/config.yaml");
+        if (!fs.existsSync(configPath)) configPath = path.resolve(Utils.getInitCWD(), "config", "config.yaml");
         if (!fs.existsSync(configPath)) {
             console.error(`Config file '${configPath}' does not exists`);
             process.exit(1);
@@ -231,7 +231,7 @@ export class LoggingConfig implements ILoggingConfig {
      */
     public static defaultValue(): ILoggingConfig {
         return {
-            folder: path.resolve(Utils.getInitCWD(), "logs/"),
+            folder: path.resolve(Utils.getInitCWD(), "logs"),
             level: "info",
             console: false,
         };
@@ -279,7 +279,7 @@ export class KeyStoreConfig implements IKeyStoreConfig {
                 this.items.push({
                     name: elem.name,
                     file: elem.file,
-                    key_store: new KeyStore(elem.name, path.resolve("keystore/" + elem.file)),
+                    key_store: new KeyStore(elem.name, path.resolve("keystore" + elem.file)),
                 });
             }
         }

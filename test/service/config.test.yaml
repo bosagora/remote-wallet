@@ -3,7 +3,7 @@ server:
     port: 3000
 
 logging:
-    folder: /rw/logs/
+    folder: logs
     level: debug
 
 wallet:

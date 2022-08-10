@@ -21,6 +21,7 @@ import * as hre from "hardhat";
 
 import express from "express";
 import fs from "fs";
+import path from "path";
 
 // tslint:disable-next-line:no-var-requires
 const { body, param, query, validationResult } = require("express-validator");
@@ -54,6 +55,9 @@ export class WalletRouter {
         this._config = config;
 
         this.ERC20_ABI = JSON.parse(fs.readFileSync("src/service/contract/ERC20.ABI.json", "utf8"));
+        this.ERC20_ABI = JSON.parse(
+            fs.readFileSync(path.resolve("src", "service", "contract", "ERC20.ABI.json"), "utf8")
+        );
         this.manager_wallet = new Wallet(this._config.wallet.manager_key);
         this.manager_signer = new NonceManager(
             new GasPriceManager(hre.ethers.provider.getSigner(this.manager_wallet.address))
