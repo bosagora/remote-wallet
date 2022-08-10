@@ -34,7 +34,7 @@ export class Logger {
     public static defaultFileTransport(folderPath: string) {
         // write log file options
         const options = {
-            filename: path.join(folderPath, "RemoteWallet.log"),
+            filename: path.resolve(folderPath, "RemoteWallet.log"),
             handleExceptions: true,
             json: false,
             maxsize: 10485760, // 10MB

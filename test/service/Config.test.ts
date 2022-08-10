@@ -1,14 +1,15 @@
 import { Config } from "../../src/service/common/Config";
 
 import * as assert from "assert";
+import path from "path";
 
 describe("Test of Config", () => {
     it("Test parsing the settings of a string", async () => {
         const config: Config = new Config();
-        config.readFromFile("./test/service/config.test.yaml");
+        config.readFromFile(path.resolve("test", "service", "config.test.yaml"));
         assert.strictEqual(config.server.address, "127.0.0.1");
         assert.strictEqual(config.server.port.toString(), "3000");
-        assert.strictEqual(config.logging.folder, "/rw/logs");
+        assert.strictEqual(config.logging.folder, path.resolve("logs"));
         assert.strictEqual(config.logging.level, "debug");
         assert.strictEqual(
             config.wallet.manager_key,

@@ -12,7 +12,7 @@ server:
 ################################################################################
 logging:
   # The name of the folder where the logs are stored.
-  folder: logs/
+  folder: logs
   # Values: error, warn, info, http, verbose, debug, silly
   level: http
   # Default to false
